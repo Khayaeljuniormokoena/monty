@@ -11,6 +11,8 @@ void f_div(stack_t **head, unsigned int counter)
 {
 	stack_t *current = *head;
 	int len;
+	int result;
+	stack_t *temp;
 
 	for (len = 0; current != NULL; len++)
 
@@ -33,11 +35,11 @@ void f_div(stack_t **head, unsigned int counter)
 		exit(EXIT_FAILURE);
 	}
 
-	int result = current->next->n / current->n;
+	result = current->next->n / current->n;
 
 	current->next->n = result;
 
-	stack_t *temp = current->next;
+	temp = current->next;
 
 	current->next = current->next->next;
 

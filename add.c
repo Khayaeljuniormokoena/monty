@@ -9,6 +9,8 @@
 void f_add(stack_t **head, unsigned int counter)
 {
 	stack_t *current = *head;
+	int sum;
+	stack_t *temp;
 
 	if (current == NULL || current->next == NULL)
 	{
@@ -19,10 +21,10 @@ void f_add(stack_t **head, unsigned int counter)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	int sum = current->n + current->next->n;
+	sum = current->n + current->next->n;
 
 	current->next->n = sum;
-	stack_t *temp = current->next;
+	temp = current->next;
 
 	current->next = current->next->next;
 

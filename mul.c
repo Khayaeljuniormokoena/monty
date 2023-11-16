@@ -11,6 +11,8 @@ void f_mul(stack_t **head, unsigned int counter)
 {
 	stack_t *current = *head;	
 	int len;
+	int result;
+	stack_t *temp;
 
 	for (len = 0; current != NULL; len++)	
 		current = current->next;
@@ -23,9 +25,9 @@ void f_mul(stack_t **head, unsigned int counter)
 		exit(EXIT_FAILURE);
 	}
 	current = *head;
-	int result = current->next->n * current->n;
+	result = current->next->n * current->n;
 	current->next->n = result;
-	stack_t *temp = current->next;
+	temp = current->next;
 	
 	current->next = current->next->next;
 	temp->next = NULL;

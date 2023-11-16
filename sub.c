@@ -9,7 +9,9 @@
 void f_sub(stack_t **head, unsigned int counter)
 {
 	stack_t *current = *head;
-	int nodes;
+	int nodes = 0;
+	int difference;
+	stack_t *temp;
 
 	for (nodes = 0; current != NULL; nodes++)
 		current = current->next;
@@ -23,10 +25,10 @@ void f_sub(stack_t **head, unsigned int counter)
 	}
 	current = *head;
 
-	int difference = current->next->n - current->n;
+	difference = current->next->n - current->n;
 
 	current->next->n = difference;
-	stack_t *temp = current->next;
+	temp = current->next;
 
 	current->next = current->next->next;
 
